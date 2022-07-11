@@ -36,31 +36,35 @@
 </head>
 
 <body>
-  <!-- <nav>
-      <div class="social">
-        <h4><a href="http://www.twitter.com/kaityradde" target="_blank"><i class="fa fa-twitter"></i></a></h4> 
-        <h4><a href="http://www.instagram.com/kaity.radde" target="_blank"><i class="fa fa-instagram"></i></a></h4>
-        <h4><a href="mailto:raddekaity@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></h4>
-      </div>
-    </nav> -->
   <div>
     <div class="name">
-      hi! i'm kaitlyn radde.
+      hi! i'm <a2>kaitlyn radde</a2>.
     </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="sub">
       about me
     </div>
     <div class="deets">
       <p>i live in washington, d.c. and currently work as a data reporting intern at chalkbeat.</p>
-      <p>before that, i studied at indiana university, where i worked as an enterprise editor and reporter at the
+      <p>before that, i studied quantitative political science at indiana university. at iu, i worked as an enterprise editor and reporter at the
         indiana daily student and a producer at wfiu, our npr affiliate station. </p>
+      <p>i like using data and documents to tell compelling stories that hold powerful people accountable. because of that, i've covered a wide array of institutions, including a <a href = "https://www.idsnews.com/article/2020/10/activists-want-to-defund-police-departments-what-could-that-look-like-in-bloomington-black-lives-matter">police department</a>, a <a href = "http://specials.idsnews.com/iu-health-bloomington-hospital-price-transparency-rule-medical-bill/">hospital</a>, a <a href = "https://specials.idsnews.com/indiana-department-of-corrections-books-magazines-newspapers-banned-censored-first-amendment-incarceration-prison-rights/">prison system</a>, and, of course, indiana <a href = "https://specials.idsnews.com/iu-records-public-access-violations-ferpa-title-ix-shame-on-their-lawyers-apra/index.html">university</a> — more than <a href = "https://www.idsnews.com/article/2020/09/iu-white-supremacist-sentiment-nsfh">once.</a></p>
+      <p>want to chat? you can reach me via <a href="mailto:raddekaity@gmail.com">email</a> or find me on <a href="http://www.twitter.com/kaityradde">twitter</a>! in the meantime, you can see some of my best work (and a handful of awards) below.</p>
     </div>
-  </div>
+    </div>
   <div class="work">
-    <div class="sub">
+    <div class="sub" id = "work">
       work samples
     </div>
-    <div class="type">data analysis + viz</div>
+    <div class="topnav" id="myTopnav">
+      <a href="#data" class="active">data analysis + viz</a>
+      <a href = "#news" class = "active">news + features</a>
+      <a href = "#audio" class = "active">audio</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="type" id = "data">data analysis + viz</div>
     <div class = "clip">
       <div class = "date">10/25/21, Indiana Daily Student</div>
        <div class = "hed">
@@ -82,17 +86,23 @@
       </div>
     </div>
     <!-- <div class = "clip">
+      <div class = "date">7/1/22, Chalkbeat</div>
+       <div class = "hed">
+         <a href = "https://www.chalkbeat.org/2022/7/1/23188699/how-the-covid-19-pandemic-changing-school-data-systems-federal-funding-relief-spending">How the COVID-19 pandemic is changing school data</a>
+       </div>
+     </div>  -->
+     <div class = "clip">
+      <div class = "date">7/6/22, Chalkbeat</div>
+       <div class = "hed">
+         <a href = "https://tn.chalkbeat.org/2022/7/6/23195388/memphis-shelby-county-schools-tcap-tennessee-department-education-covid-pandemic-standardized-tests">Memphis-Shelby County Schools’ TCAP scores return to near pre-pandemic levels, but gaps persist</a>
+       </div>
+     </div> 
+    <!-- <div class = "clip">
       <div class = "date">1/4/21, Indiana Daily Student</div>
        <div class = "hed">
          <a href = "https://www.idsnews.com/article/2021/01/indiana-protests-2020-black-lives-matter-coronavirus">2020 was a year of protests. We broke down how it looked in Indiana.</a>
        </div>
      </div>  -->
-     <div class = "clip">
-      <div class = "date">10/8/20, Indiana Daily Student</div>
-       <div class = "hed">
-         <a href = "https://www.idsnews.com/article/2020/10/activists-want-to-defund-police-departments-what-could-that-look-like-in-bloomington-black-lives-matter">Activists want to defund police departments. What could that look like in Bloomington?</a>
-       </div>
-     </div>
 
 
     <!-- INSERT CLIP TEMPLATE
@@ -102,7 +112,7 @@
         <a href = "url">INSERT HEADLINE</a>
       </div>
     </div> -->
-    <div class="type">news + features</div>
+    <div class="type" id = "news">news + features</div>
     <div class = "clip">
       <div class = "date">5/3/22, Indiana Daily Student — reporting + web dev</div>
        <div class = "hed">
@@ -133,6 +143,12 @@
              <a href = "https://www.idsnews.com/article/2020/11/monday-he-was-excited-by-wednesday-he-was-worried-meet-an-iu-student-poll-worker">Monday, he was excited. By Wednesday, he was worried. Meet an IU student poll worker.</a>
            </div>
          </div>
+         <!-- <div class = "clip">
+          <div class = "date">10/8/20, Indiana Daily Student</div>
+           <div class = "hed">
+             <a href = "https://www.idsnews.com/article/2020/10/activists-want-to-defund-police-departments-what-could-that-look-like-in-bloomington-black-lives-matter">Activists want to defund police departments. What could that look like in Bloomington?</a>
+           </div>
+         </div> -->
          <div class = "clip">
           <div class = "date">10/6/20, Indiana Daily Student</div>
            <div class = "hed">
@@ -145,7 +161,7 @@
              <a href = "https://www.idsnews.com/article/2020/09/iu-white-supremacist-sentiment-nsfh">Report finds ‘pattern of white supremacist sentiment’ at IU, calls for intervention</a>
            </div>
          </div> 
-    <div class="type">audio</div>
+    <div class="type" id = "audio">audio</div>
     <div class = "clip">
       <div class = "date">3/11/22, WFIU Inner States</div>
        <div class = "hed">
@@ -164,10 +180,11 @@
            <a href = "https://indianapublicmedia.org/innerstates/serious-thoughts-laughing-matters.php">Serious Thoughts About Laughing Matters</a>
          </div>
        </div>
-  <div class="sub">awards</div>
+  </div>
+  <div class="sub" id = "awards">selected awards</div>
     <div class="org">indiana collegiate press association</div>
-    <div class = "type2">- news story, 1st place: may 2021 and may 2022</div>
-    <div class = "type2">- continuous coverage of a single story, 1st place: may 2022</div>
+    <div class = "type2">- news story, 1st place: may 2021 and 2022 </div>
+    <div class = "type2">- continuous coverage of a single story, 1st place: may 2022 </div>
     <div class="org">indiana society of professional journalists</div>
     <div class = "type2">- student non-deadline news, 1st place: april 2022</div>
     <div class="org">betty gage holland award</div>

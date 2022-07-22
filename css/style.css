@@ -164,13 +164,13 @@ a2 {
   
 }
 
-/* .featured{
+.featured{
 display: flex; 
-justify-content: space-between;
+justify-content: center;
 vertical-align: middle;
 flex-wrap: wrap; 
 flex-direction: row;
-} */
+}
 
 
 .hed{
@@ -203,14 +203,14 @@ li::not(::first-line){
   padding-left: 1em;
 }
 
-.img{
+/* .img{
   display: block;
   vertical-align: middle;
-}
+} */
 
 .clip-image {
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 30%;
+  max-width: 30%;
   flex: 1;
   margin: 20px;
 }
@@ -281,12 +281,7 @@ background-image: linear-gradient(to right,whitesmoke 50%,rgb(167, 24, 24) 50%);
 }
 
 
-.show-desktop {
-  display: none;
-}
-.show-mobile {
-  display: block;
-}
+
 
 .credit {
   font-family: Lato, sans-serif;
@@ -308,8 +303,20 @@ No media query for `xs` since this is the default */
 @media (max-width: 576px) { 
   .featured {
     display: block;
-    margin-bottom: 75px;
 }
+.featured .clip-image{
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+.show-desktop {
+  display: block;
+}
+.show-mobile {
+  display: none;
+}
+
 .topnav a {
   float: left;
   display: block;
@@ -347,7 +354,12 @@ No media query for `xs` since this is the default */
 @media (max-width: 768px) {
   .featured {
     display: block;
-    margin-bottom: 75px;
+}
+.show-desktop {
+  display: block;
+}
+.show-mobile {
+  display: none;
 }
 }
 

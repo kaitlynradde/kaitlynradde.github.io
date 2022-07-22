@@ -144,6 +144,7 @@ body{
   color:rgb(167, 24, 24);
 }
 
+
 .org{
   font-family: 'Roboto Mono';
   /* font-style: italic; */
@@ -213,6 +214,27 @@ li::not(::first-line){
   max-width: 30%;
   flex: 1;
   margin: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+.column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 6px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  margin-right: 0;
+
 }
 
 .topnav {
@@ -310,6 +332,7 @@ No media query for `xs` since this is the default */
   width: 75%;
 }
 
+
 .show-desktop {
   display: block;
 }
@@ -358,10 +381,9 @@ No media query for `xs` since this is the default */
 .show-desktop {
   display: block;
 }
-.show-mobile {
+/* .show-mobile {
   display: none;
-}
-}
+} */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {

@@ -64,3 +64,93 @@ moveItItem.prototype.update = function(scrollTop) {
 $(function() {
     $('[data-scroll-speed]').moveIt();
 });
+
+
+
+
+//find all analysis clips
+var analysis = document.querySelectorAll('.analysis');
+
+//find all news clips
+var news = document.querySelectorAll('.news');
+
+var viz = document.querySelectorAll('.viz');
+
+var audio = document.querySelectorAll('.audio');
+
+var dev = document.querySelectorAll('.dev');
+
+//find all 
+var alls = document.querySelectorAll('.clip');
+
+//function to initially loop through all items and hide them
+function hide_init(){
+   for (var i = 0; i < alls.length; ++i) { 
+ alls[i].style.display = 'none'; 
+}
+}
+
+function show_analysis(){  
+//call the inital hide function
+hide_init();
+//loop through red-tagged items and show them  
+   for (var i = 0; i < analysis.length; ++i) { 
+ analysis[i].style.display = 'inline-block'; 
+} 
+}
+
+function show_news(){  
+    //call the inital hide function
+    hide_init();
+    //loop through red-tagged items and show them  
+       for (var i = 0; i < news.length; ++i) { 
+     news[i].style.display = 'inline-block'; 
+    } 
+}
+
+function show_viz(){  
+    //call the inital hide function
+    hide_init();
+    //loop through red-tagged items and show them  
+       for (var i = 0; i < viz.length; ++i) { 
+     viz[i].style.display = 'inline-block'; 
+    } 
+}
+
+function show_audio(){  
+    //call the inital hide function
+    hide_init();
+    //loop through red-tagged items and show them  
+       for (var i = 0; i < audio.length; ++i) { 
+     audio[i].style.display = 'inline-block'; 
+    } 
+}
+
+function show_dev(){  
+    //call the inital hide function
+    hide_init();
+    //loop through red-tagged items and show them  
+       for (var i = 0; i < dev.length; ++i) { 
+     dev[i].style.display = 'inline-block'; 
+    } 
+}
+
+
+
+function show_all(){  
+  //loop through all items and show them
+   for (var i = 0; i < alls.length; ++i) { 
+ alls[i].style.display = 'inline-block'; 
+} 
+}
+
+
+
+
+
+
+
+
+
+
+

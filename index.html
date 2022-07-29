@@ -32,6 +32,9 @@
     ga('send', 'pageview');
   </script>
 
+<script src="/template.js"></script>
+
+
   <script src="https://use.fontawesome.com/4b5937ee0e.js"></script>
 </head>
 
@@ -73,6 +76,15 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
+
+    <!-- <button id="show_all" onclick = "show_all()">all</button>
+    <button id="show_analysis" onclick = "show_analysis()">data analysis</button>
+    <button id="show_news" onclick = "show_news()">news</button>
+    <button id="show_viz" onclick = "show_viz()">data viz</button>
+    <button id="show_audio" onclick = "show_audio()">audio</button>
+    <button id="show_dev" onclick = "show_dev()">web dev</button> -->
+
+
     <div class = "row show-mobile">
       <div class = "column">
         <a href = "#dark"><img src = "/images/2.png"></a>
@@ -86,18 +98,18 @@
     <div class="type" id = "data">data analysis</div>
      <!--  CLIP TEMPLATE
     <div class = "clip">
-     <div class = "date">INSERT DATE</div>
+     <div class = "date">INSERT DATE, OUTLET </div>
       <div class = "hed">
         <a href = "url" target = "_blank">INSERT HEADLINE</a>
       </div>
     </div> -->
-    <div class="clip" id = "jeffco">
+    <div class="clip analysis viz" id = "jeffco">
       <div class="date">7/22/22, Chalkbeat — analysis + viz</div>
       <div class="hed">
         <a href="https://co.chalkbeat.org/2022/7/22/23272681/jeffco-small-schools-elementary-closure-enrollment-data-analysis" target = "_blank">5 takeaways from the data that will shape Jeffco school closure decisions</a>
       </div>
     </div>
-    <div class = "clip" id = "dark">
+    <div class = "clip analysis" id = "dark">
       <div class = "date">10/25/21, Indiana Daily Student</div>
        <div class = "hed">
          <a href = "http://specials.idsnews.com/iu-health-bloomington-hospital-price-transparency-rule-medical-bill/" target = "_blank">In the dark:
@@ -108,7 +120,7 @@
       <div class = "clip-image show-mobile">
         <img src = "/images/cdc-clip-img.png">
       </div> -->
-    <div class="clip">
+    <div class="clip analysis viz">
       <div class="date">9/13/21, Indiana Daily Student — analysis + viz</div>
       <div class="hed">
         <a href="https://www.idsnews.com/article/2021/09/eviction-moratorium-bloomington-cdc-moratoria" target = "_blank">The CDC eviction
@@ -141,12 +153,14 @@
        <div class = "hed">
          <a href = "https://specials.idsnews.com/iu-records-public-access-violations-ferpa-title-ix-shame-on-their-lawyers-apra/index.html" target = "_blank">‘Shame on their lawyers’: IU’s violations of public access laws this year show contempt for transparency. But the problem is even deeper.</a>
        </div>
+       <div class = "description">web dev code available <a href = "https://github.com/IU-Student-Media/specials/tree/master/iu-records-public-access-violations-ferpa-title-ix-shame-on-their-lawyers-apra" target = "_blank">here</a></div>
      </div>
     <div class = "clip">
       <div class = "date">3/27/22, Indiana Daily Student — reporting + web dev </div>
        <div class = "hed">
          <a href = "https://specials.idsnews.com/indiana-department-of-corrections-books-magazines-newspapers-banned-censored-first-amendment-incarceration-prison-rights/" target = "_blank">‘In prison, knowledge is power’: How publications are restricted in Indiana prisons</a>
        </div>
+       <div class = "description">web dev code available <a href = "https://github.com/IU-Student-Media/specials/tree/master/indiana-department-of-corrections-books-magazines-newspapers-banned-censored-first-amendment-incarceration-prison-rights" target = "_blank">here</a></div>
        </div>
          <div class = "clip">
           <div class = "date">11/4/20, Indiana Daily Student</div>
@@ -223,5 +237,6 @@
     <div class = "type2">- news writing, 1st and 3rd place: jan. 2021</div>
     <div class="org">associated collegiate press best of show award</div>
     <div class = "type2">- social justice reporting, 1st place: oct. 2020</div>
-</body>
+
+  </body>
 </html>

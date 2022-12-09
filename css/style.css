@@ -265,6 +265,28 @@ li::not(::first-line){
 
 }
 
+/* #filters{
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color:rgb(167, 24, 24);
+  text-decoration: none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width:15px;
+  height:15px;
+  border: 2px solid rgb(167, 24, 24);
+  background-clip: content-box;
+  padding: 2px;
+}
+input[type="checkbox"]:checked {
+  background-color:rgb(201, 129, 129);
+} */
+
 
 /* .highlight.active{
   color: antiquewhite;

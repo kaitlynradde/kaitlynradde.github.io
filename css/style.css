@@ -53,6 +53,11 @@ body {
   padding-bottom: 0px;
 }
 
+hr {
+  margin: 30px;
+  color: black;
+}
+
 .footer {
   background-color: rgb(255, 185, 185);
   border-top-left-radius: 2rem;
@@ -402,9 +407,6 @@ No media query for `xs` since this is the default */
   .show-desktop {
     display: block;
   }
-  /* .show-mobile {
-  display: none;
-} */
 }
 
 /* Large devices (desktops, 992px and up) */

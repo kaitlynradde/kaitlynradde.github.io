@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Project — Kaitlyn Radde</title>
+  <meta name="description" content="Loading project..." />
+  <meta name="author" content="Kaitlyn Radde" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/variables.css" />
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+  
+  <!-- Icons -->
+  <link rel="icon" href="../../images/favicon-32x32.png" />
+  <script src="https://kit.fontawesome.com/ea52966d59.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav">
+        <a href="/" class="site-logo">kaitlyn radde</a>
+        <ul class="nav-links">
+          <li><a href="/#work">Work</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/kaitlyn-radde" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+          <li>
+            <a href="../../images/radderesume_2025.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <a href="/#work" class="back-link"><i class="fas fa-arrow-left"></i> Back to work</a>
+    </div>
+
+    <section class="project-header">
+      <div class="container content-width">
+        <div class="project-meta">
+          <time id="projectDate" datetime=""></time>
+          <span id="projectOrg" class="project-org"></span>
+        </div>
+        
+        <h1 id="projectTitle" class="project-title"></h1>
+        <div id="projectContent" class="project-content-header"></div>
+        <div id="projectCategories" class="project-categories"></div>
+        <div id="projectTools" class="project-tools"></div>
+        
+        <div class="project-actions">
+          <a id="projectLink" href="" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            View project <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">let's chat</p>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/kaitlyn-radde" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="../../images/radderesume_2025.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="https://github.com/kaitlynradde" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../../js/utils.js"></script>
+  <script>
+    let currentProject = null;
+    let allProjects = [];
+
+    function getProjectSlug() {
+      const path = window.location.pathname;
+      const matches = path.match(/\/work\/([^\/]+)\/?$/);
+      return matches ? matches[1] : null;
+    }
+
+    async function initProject() {
+      const slug = getProjectSlug();
+      if (!slug) {
+        showError('No project found');
+        return;
+      }
+
+      allProjects = await fetchData('../../data/projects.json');
+      if (!allProjects || allProjects.length === 0) {
+        showError('Failed to load projects data');
+        return;
+      }
+
+      currentProject = allProjects.find(p => p.id === slug);
+      if (!currentProject) {
+        showError(`Project "${slug}" not found`);
+        return;
+      }
+
+      // Redirect if flag is set
+      if (currentProject.redirect && currentProject.externalLink) {
+        window.location.href = currentProject.externalLink;
+        return;
+      }
+
+      renderProjectHeader();
+      updateMetaTags();
+    }
+
+    function renderProjectHeader() {
+      document.title = `${currentProject.title} — Kaitlyn Radde`;
+      document.getElementById('projectTitle').textContent = currentProject.title;
+
+      const dateElement = document.getElementById('projectDate');
+      dateElement.textContent = formatDate(currentProject.date);
+      dateElement.datetime = currentProject.date;
+
+      document.getElementById('projectOrg').textContent = currentProject.organization || 'Personal Project';
+
+      // Move content to header (above the fold)
+      const headerContent = document.getElementById('projectContent');
+      if (headerContent && currentProject.content) {
+        headerContent.innerHTML = convertMarkdownToHTML(currentProject.content);
+      }
+
+      const categoriesHtml = currentProject.categories
+        .map(cat => `<span class="category">${cat}</span>`)
+        .join('');
+      document.getElementById('projectCategories').innerHTML = categoriesHtml;
+
+      const projectTools = document.getElementById('projectTools');
+      if (projectTools && currentProject.tools && currentProject.tools.length > 0) {
+        projectTools.innerHTML = currentProject.tools
+          .map(tool => `<span class="tool">${tool}</span>`)
+          .join('');
+      }
+
+      if (currentProject.externalLink) {
+        document.getElementById('projectLink').href = currentProject.externalLink;
+      } else {
+        document.getElementById('projectLink').style.display = 'none';
+      }
+    }
+
+    function updateMetaTags() {
+      updateMetaTag('description', currentProject.excerpt);
+      updateMetaTag('og:title', `${currentProject.title} — Kaitlyn Radde`);
+      updateMetaTag('og:description', currentProject.excerpt);
+      updateMetaTag('og:image', `https://kaitlynradde.github.io/${currentProject.image}`);
+      updateMetaTag('og:url', `https://kaitlynradde.github.io/work/${currentProject.id}/`);
+    }
+
+    function updateMetaTag(name, content) {
+      let tag = document.querySelector(`meta[property="${name}"], meta[name="${name}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute(name.includes(':') ? 'property' : 'name', name);
+        document.head.appendChild(tag);
+      }
+      tag.content = content;
+    }
+
+    function convertMarkdownToHTML(text) {
+      return text
+        .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
+        .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
+        .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
+        .replace(/\*\*(.*?)\*\*/gm, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/gm, '<em>$1</em>')
+        .replace(/\[(.*?)\]\((.*?)\)/gm, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        .split('\n\n')
+        .map(paragraph => {
+          if (paragraph.trim().startsWith('<')) {
+            return paragraph;
+          }
+          return `<p>${paragraph.trim()}</p>`;
+        })
+        .join('')
+        .replace(/\n/g, '<br>');
+    }
+
+    function showError(message) {
+      const main = document.querySelector('main');
+      main.innerHTML = `
+        <div class="container">
+          <div style="text-align: center; padding: 60px 0;">
+            <h1>Project Not Found</h1>
+            <p>${message}</p>
+            <a href="/#work" class="btn btn-primary" style="margin-top: 20px;">Back to work</a>
+          </div>
+        </div>
+      `;
+    }
+
+    onReady(initProject);
+  </script>
+</body>
+
+</html>

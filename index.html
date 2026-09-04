@@ -1,99 +1,225 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+    <title>kaitlyn radde — data journalist</title>
+    <meta
+      name="description"
+      content="kaitlyn radde portfolio — data analysis and visualization"
+    />
+    <meta name="author" content="Kaitlyn Radde" />
 
-  <title>kaitlyn radde</title>
-  <meta name="description" content="Work by Kaitlyn Radde" />
-  <meta name="author" content="Kaitlyn Radde" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="kaitlyn radde portfolio"
+    />
+    <meta
+      property="og:description"
+      content="kaitlyn radde portfolio"
+    />
+    <meta property="og:image" content="images/og-image.jpg" />
+    <meta property="og:url" content="https://kaitlynradde.github.io/" />
 
-  <link rel="stylesheet" href="css/normalize.css?cache=trash" />
-  <link rel="stylesheet" href="css/template.css" />
-  <link rel="stylesheet" href="css/style.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
 
-  <script src="https://kit.fontawesome.com/ea52966d59.js" crossorigin="anonymous"></script>
+    <!-- Icons -->
+    <link rel="icon" href="images/favicon-32x32.png" />
+    <script
+      src="https://kit.fontawesome.com/ea52966d59.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-GA-ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-YOUR-GA-ID"); // Replace with your GA4 ID
+    </script>
+  </head>
 
-  <!-- google analytics -->
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i["GoogleAnalyticsObject"] = r;
-      (i[r] =
-        i[r] ||
-        function () {
-          (i[r].q = i[r].q || []).push(arguments);
-        }),
-        (i[r].l = 1 * new Date());
-      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m);
-    })(
-      window,
-      document,
-      "script",
-      "https://www.google-analytics.com/analytics.js",
-      "ga"
-    );
+  <body>
+    <!-- <a href="#main" class="skip-link">Skip to main content</a> -->
 
-    ga("create", "UA-86257607-1", "auto");
-    ga("send", "pageview");
-  </script>
+    <header class="site-header">
+      <div class="container">
+        <nav class="site-nav">
+          <a href="/" class="site-logo">kaitlyn radde</a>
+          <ul class="nav-links">
+            <li><a href="#work">work</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/kaitlyn-radde"
+                target="_blank"
+                rel="noopener noreferrer"
+                >linkedin</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                href="images/radderesume_2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >resume</a
+              >
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <script src="/template.js"></script>
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>data journalist</h1>
+            <p class="hero-subtitle">
+              i'm kaitlyn radde. i use data analysis and visualization to find
+              and tell interesting stories. currently a computational
+              social science assistant at
+              <a
+                href="https://www.pewresearch.org/staff/kaitlyn-radde"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pew research center</a
+              >.
+            </p>
+            <!-- <div class="hero-cta">
+              <a href="#work" class="btn btn-primary">See my work</a>
+              <a
+                href="https://www.linkedin.com/in/kaitlyn-radde"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+                >Connect on LinkedIn</a
+              >
+            </div> -->
+          </div>
+          <div class="hero-image">
+            <img src="images/headshot.JPEG" alt="Kaitlyn Radde" />
+          </div>
+        </div>
+      </section>
 
-  <script src="https://use.fontawesome.com/4b5937ee0e.js"></script>
-  <link rel = "icon" href = "/images/favicon-32x32.png">
-</head>
+      <!-- Work Section -->
+      <section id="work" class="work-section">
+        <div class="container">
+          <h2>selected work</h2>
+      
+          <!-- Filter Buttons -->
+          <div class="filter-group">
+            <button class="filter-btn" data-filter="all">all</button>
+            <button class="filter-btn active" data-filter="featured">featured</button>
+            <button class="filter-btn" data-filter="data analysis">data analysis</button>
+            <button class="filter-btn" data-filter="reporting">reporting</button>
+            <button class="filter-btn" data-filter="design">data viz & design</button>
+            <!-- <button class="filter-btn" data-filter="development">development</button> -->
+          </div>
+      
+          <!-- Work Grid (not list) -->
+          <div class="work-grid" id="workGrid">
+            <!-- Populated by JavaScript -->
+          </div>
+        </div>
+      </section>
 
-<body>
-  <div class="name">hi! i'm <a2>kaitlyn radde</a2>.</div>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <!-- About/Bio Section -->
+      <section class="about-section">
+        <div class="container">
+          <h2>about</h2>
+          <div class="about-content">
+            <p>
+              i am a computational social science assistant on the data labs
+              team at pew research center in washington, d.c. i first joined the
+              center in 2023 as an information graphics designer. before that, i
+              interned with the data reporting and graphics teams at
+              <a
+                href="https://www.npr.org/people/1136147129/kaitlyn-radde"
+                target="_blank"
+                rel="noopener noreferrer"
+                >npr</a
+              >
+              and
+              <a
+                href="https://www.chalkbeat.org/authors/kaitlyn-radde/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >chalkbeat</a
+              >.
+            </p>
 
-  <div class="sub" id="about">about me</div>
-  <div class="topnav" id="myTopnav">
-    <a href="/work.html" class="active">work samples</a>
-    <a href="/awards.html" class="active">awards</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-  <div class="deets">
-    <p>
-      i am an information graphics designer at pew research
-      center in washington, d.c. before that, i interned with the data reporting and graphics teams at <a href="https://www.npr.org/people/1136147129/kaitlyn-radde" target="_blank">npr</a> and <a href = "https://www.chalkbeat.org/authors/kaitlyn-radde/" target = "blank">chalkbeat</a>.
-    </p>
-    <p>
-      i've used data and documents to report on a wide array of topics, including
-      <a href="http://specials.idsnews.com/iu-health-bloomington-hospital-price-transparency-rule-medical-bill/">hospital
-        price negotiations</a>, access to
-      <a href="https://specials.idsnews.com/indiana-department-of-corrections-books-magazines-newspapers-banned-censored-first-amendment-incarceration-prison-rights/"
-        target="_blank">books in prison</a>, and
-      <a href="https://www.npr.org/2023/04/17/1168824035/child-labor-tobacco-legal-dangerous" target="_blank">child</a>
-      <a href="https://www.npr.org/2023/02/26/1157368469/child-labor-violations-increase-states-loosen-rules"
-        target="_blank">labor</a>.
-    </p>
-    <p>in my current role, i work closely with researchers and web developers to make important findings shine on the
-      web. on top of daily static charts, some of my recent design work includes a photo illustration for a groundbreaking study on <a
-        href="https://www.pewresearch.org/journalism/2024/11/18/americas-news-influencers/" target="blank">america's
-        news influencers</a> and hand-drawn, animated sprites for an interactive
-      <a href="https://www.pewresearch.org/internet/feature/why-many-parents-and-teens-think-its-harder-being-a-teen-today/"
-        target="blank">essay about teen life today.</a>
-    </p>
-    <p>i'm also a developer on the center's R graphics package, which streamlines chartmaking in R and customizes
-      ggplot2 to our style guide. if you're interested in doing something similar at your org, <a
-        href="https://github.com/pewresearch/pewplots-nicar-2025" target="blank">here's the github repo</a>
-      from a hands-on class i taught at nicar 2025.</p>
-  <div class = "footer">
-    <div class= "footer_sub">let's chat!</div>
-    <p>say hey or see more of my work:</p>
-    <div class = "footer_link"><a href="https://www.linkedin.com/in/kaitlyn-radde" target="_blank">linkedin</a></div>
-    <div class = "footer_link"><a href="/work.html">work samples</a></div>
-    <div class = "footer_link"><a href="/images/radderesume_2025.pdf" target="_blank">resume</a></div>
-  </div>    
-  </div>
-  </div>
+            <p>
+              as a reporter and a researcher, i've used data and documents to report on a wide array of topics, including prediction markets, hospital price negotiations, and child labor violations. i'm an r native, but increasingly, i'm using python to collect data at scale and work effectively on a bilingual coding team. i'm no stranger to picking up new tools on the job when answering important questions requires it.
+            </p>
+
+            <p>
+              as a designer, i worked closely with researchers and web developers to make important findings shine on the web. i'm also a developer on the center's R graphics package, which
+              streamlines chartmaking in R and customizes ggplot2 to our style
+              guide. if you're interested in doing something similar at your
+              organization,
+              <a
+                href="https://github.com/pewresearch/pewplots-nicar"
+                target="_blank"
+                rel="noopener noreferrer"
+                >here's the github repo</a
+              >
+              from a hands-on class i have taught at nicar.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-text">let's chat!</p>
+        <ul class="footer-links">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/kaitlyn-radde"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+          <!-- <li>
+            <a
+              href="images/radderesume_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Resume</a
+            >
+          </li> -->
+          <li>
+            <a
+              href="https://github.com/kaitlynradde"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
   </body>
+</html>

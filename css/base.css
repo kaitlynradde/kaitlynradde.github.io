@@ -19,7 +19,10 @@ body {
   line-height: var(--line-height-relaxed);
   color: var(--color-secondary);
   background-color: var(--color-bg-white);
-  text-rendering: optimizeLegibility;
+  padding: var(--space-lg);
+  margin: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 main {
@@ -35,6 +38,7 @@ main {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  box-sizing: border-box;
 }
 
 .content-width {

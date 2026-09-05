@@ -83,10 +83,11 @@
 /* Dark Mode (Future Enhancement) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #f5f5f5;
-    --color-secondary: #e0e0e0;
-    --color-bg-white: #1a1a1a;
-    --color-bg-light: #2a2a2a;
-    --color-border: #404040;
+    --color-primary: #e8e8e8;           /* Light gray instead of dark brown */
+    --color-secondary: #f0f0f0;         /* Light text */
+    --color-bg-white: #1a1a1a;          /* Dark background */
+    --color-bg-light: #2d2d2d;          /* Slightly lighter dark */
+    --color-border: #404040;            /* Dark border */
+    --color-accent-pink: #8b4a4a;       /* Darker, muted pink */
   }
 }

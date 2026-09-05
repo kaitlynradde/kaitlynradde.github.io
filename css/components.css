@@ -123,14 +123,14 @@
    ============================================ */
 
 .hero {
-  padding: var(--space-4xl) 0;
+  padding: var(--space-2xl) 0;
   background-color: var(--color-bg-light);
 }
 
 .hero .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
+  gap: var(--space-lg);
   align-items: center;
 }
 
@@ -496,4 +496,69 @@
 
 .about-content p {
   margin-bottom: var(--space-xl);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-content h1 {
+    color: #ff9999;  /* Lighter red for dark mode */
+  }
+  
+  .hero-content p {
+    color: #e8e8e8;  /* Light gray text */
+  }
+
+  .btn-primary {
+    background-color: #c41818;  /* Darker red */
+  }
+  
+  .btn-secondary {
+    color: #ff9999;             /* Lighter red text */
+    border-color: #ff9999;
+  }
+
+  .site-footer {
+    background-color: #8b4a4a;  /* Muted dark pink */
+  }
+
+  /* Existing footer links */
+  .site-footer a {
+    color: #ffffff;
+  }
+
+  .site-footer a:hover {
+    color: #f0f0f0;
+  }
+
+  /* Links in body text */
+  body a {
+    color: #ff9999;  /* Lighter red for dark mode */
+    box-shadow: inset 0 -2px rgba(255, 153, 153, 0.4);
+  }
+
+  body a:hover {
+    box-shadow: inset 0 -4px rgba(255, 153, 153, 0.6);
+  }
+
+  /* Work card meta (date/org) - pink in dark mode */
+  .work-card-meta {
+    color: #ff9999;  /* Light pink */
+  }
+
+  .project-meta {
+    color: #ff9999;  /* Light pink */
+  }
+
+  /* Tools - keep black/dark */
+  .tool {
+    background-color: #ffffff;  /* Dark background */
+    color: #1a1a1a;             /* White text */
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .hero .container {
+    padding: 0 var(--space-md);
+  }
 }

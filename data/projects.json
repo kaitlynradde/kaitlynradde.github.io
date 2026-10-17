@@ -1,5 +1,33 @@
 [
   {
+    "id": "wellness-2",
+    "title": "What Do Health and Wellness Influencers Post About?",
+    "date": "2026-10-07",
+    "organization": "Pew Research Center",
+    "featured": false,
+    "categories": ["data analysis"],
+    "tools": ["R", "Python", "APIs", "LLMs"],
+    "image": "images/work/wellness-2/image.jpg",
+    "externalLink": "https://www.pewresearch.org/data-labs/2026/10/07/what-do-health-and-wellness-influencers-post-about/",
+    "excerpt": "An examination of health and wellness influencer posts on social media.",
+    "content": "This project was a large group collaboration that I impacted through: \n— **Codebook development:** manually reviewed posts to determine and refine what we should measure at the post level, including deciding how to define and identify promotional material \n— **Leveraged LLMs to implement codebook:** wrote Python code to send over half a million posts to the OpenAI API batch endpoint, completing work that would have taken human coders months in less than a weekend. \n— **Evaluated LLM classifier performance:** used small test batches to identify issues with the prompt and fix them before sending all production batches, and wrote python code to parse the results and calculate performance metrics (precision, recall, accuracy)\n— **Built analysis tables:** used R and Quarto to analyze the variables we created and organize findings for the whole team to work off of",
+    "redirect": false
+  },
+  {
+    "id": "pred-markets-sports",
+    "title": "Prediction markets’ trading volume doubled between May and July, largely driven by sports",
+    "date": "2026-09-23",
+    "organization": "Pew Research Center",
+    "featured": true,
+    "categories": ["data analysis"],
+    "tools": ["R"],
+    "image": "images/work/pred-markets-sports/image.jpg",
+    "externalLink": "https://www.pewresearch.org/short-reads/2026/09/23/prediction-markets-trading-volume-doubled-between-may-and-july-largely-driven-by-sports/",
+    "excerpt": "An analysis of sports trading on the two major prediction markets, Kalshi and Polymarket.",
+    "content": "Using off-the-shelf data, I found that trading volume on prediction markets had exploded over the course of just a few months, and that sports trading was in large part responsible.",
+    "redirect": false
+  },
+  {
     "id": "typical-polymarket-user",
     "title": "What we know about the typical Polymarket user",
     "date": "2026-07-22",
@@ -18,7 +46,7 @@
     "title": "Trading volume on prediction markets has soared in recent months",
     "date": "2026-05-27",
     "organization": "Pew Research Center",
-    "featured": true,
+    "featured": false,
     "categories": ["data analysis", "design"],
     "tools": ["R"],
     "image": "images/work/pred-markets/image.jpg",
